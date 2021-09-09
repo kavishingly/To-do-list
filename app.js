@@ -1,6 +1,7 @@
 //dummy commit
 const express = require("express")
 const bodyParser = require("body-parser")
+const date=require(__dirname+"/date.js");
 const app = express();
 const items=["Buy food","Eat food","Sleep"]; //array of items
 const workItems=["Meeting at 4pm","Study","Sleep"]; //array of work-items
@@ -9,15 +10,18 @@ app.use(express.static("public")); //to serve static files
 app.set('view engine', 'ejs'); 
 
 app.get("/", (req, res) => { //1. server will give home page as response to get request by browser
-
-    var today = new Date();
-    var currentDay = today.getDay();
-    var option = { //to format the date --long means september
-        weekday: "long",
-        month: "long",
-        day: "numeric"
-    }
-    var day = today.toLocaleDateString("en-US", option);
+    /*
+    const today = new Date();
+        const currentDay = today.getDay();
+        const option = { //to format the date --long means september
+            weekday: "long",
+            month: "long",
+            day: "numeric"
+        }
+        const day = today.toLocaleDateString("en-US", option);
+    ---------instead of above code, I have create my own module date.js and to use it just simply type day=date(); ---------
+        */
+    let day=date();
     res.render('list', 
     { title: day,
         items: items
