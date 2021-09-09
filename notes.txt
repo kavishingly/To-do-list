@@ -1,0 +1,12 @@
+TEMPLATES:
+templates are use to avoid making several html files for each responses
+they help to manipulate a particular part of code
+view folder: the ejs file must be saved in a view folder
+
+tags: scriplet tag <% %> :every js code should be inside scriplet
+
+marker tag <%= var %> : every var should be inside this tag
+this tells the file to replace whatever inside here with variable
+it helps to send variable to markup ie html and use control flow(ie loops if else)
+
+
