@@ -30,7 +30,7 @@ const defaultItems=[item1,item2,item3];
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public")); //to serve static files
 app.set('view engine', 'ejs');
-
+//dummy
 app.get("/", (req, res) => {
     Item.find({},(err,foundItems)=>{
         //  console.log("Length is "+foundItems.length);
