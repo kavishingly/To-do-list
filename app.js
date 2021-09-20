@@ -4,7 +4,9 @@ const Mongoose = require("mongoose");
 const _=require("lodash")
 
 const app = express();
-Mongoose.connect("mongodb://localhost:27017/todolistDB")
+
+Mongoose.connect("mongodb+srv://admin-kavish:kavish-mongo@cluster0.qdbdt.mongodb.net/todolistDB")
+// Mongoose.connect("mongodb://localhost:27017/todolistDB")
 
 //schema for each item for any list
 const itemsSchema={
@@ -21,11 +23,11 @@ const item1=new Item({
 })
 
 const item2=new Item({
-    name: "welcome again to to-do-list"
+    name: "Add an item using + button"
 })
 
 const item3=new Item({
-    name: "welcome again to to-do-list"
+    name: "Check the item ot delete it."
 })
 const defaultItems=[item1,item2,item3];
 
