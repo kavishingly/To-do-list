@@ -148,7 +148,11 @@ app.post("/delete",(req,res)=>{
     // res.redirect("/")
     
 })
-
-app.listen(3000, () => {
-    console.log("server running at port 3000...");
+let port=process.env.PORT; //for heroku
+if(port==null || port==""){
+    port=3000;
+}
+// app.listen(p)
+app.listen(port, () => {
+    console.log("Server started successfully...");
 })
