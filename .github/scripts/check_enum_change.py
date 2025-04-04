@@ -5,7 +5,7 @@ from github import Github
 
 def get_diff():
     base_branch = os.environ.get("GITHUB_BASE_REF")
-    diff_cmd = f"git fetch origin {base_branch} && git diff origin/{base_branch} -- CheckinSourceEnum.java"
+    diff_cmd = f"git fetch origin {base_branch} && git diff origin/{base_branch} -- Checkinsource.java"
     result = subprocess.run(diff_cmd, shell=True, capture_output=True, text=True)
     return result.stdout
 
