@@ -9,7 +9,7 @@ const repoFull = process.env.GITHUB_REPOSITORY;
 const [owner, repo] = repoFull.split('/');
 
 // Check if the file was modified
-const diff = execSync(`git fetch origin ${process.env.GITHUB_BASE_REF} && git diff origin/${process.env.GITHUB_BASE_REF} -- CheckinSourceEnum.java`, { encoding: 'utf-8' });
+const diff = execSync(`git fetch origin ${process.env.GITHUB_BASE_REF} && git diff origin/${process.env.GITHUB_BASE_REF} -- Checkinsource.java`, { encoding: 'utf-8' });
 
 const addedLines = diff
   .split('\n')
