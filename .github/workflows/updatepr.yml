@@ -21,6 +21,6 @@ jobs:
 
       - name: Run enum check script
         run: |
-          node .github/script.js
+          node .github/scriptpy.py
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
