@@ -1,0 +1,26 @@
+name: Add TODOs for Enum Additions
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  enum-todo-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install jq
+        run: sudo apt-get install jq
+
+      - name: Run enum check script
+        run: |
+          node .github/scripts/check-enum-change.js
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
