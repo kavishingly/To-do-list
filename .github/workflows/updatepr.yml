@@ -1,4 +1,4 @@
-name: Add TODOs for Enum Additions
+name: Add TODOs for Enum Additions (Python)
 
 on:
   pull_request:
@@ -11,16 +11,15 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
+      - name: Set up Python
+        uses: actions/setup-python@v4
         with:
-          node-version: 18
+          python-version: 3.9
 
-      - name: Install jq
-        run: sudo apt-get install jq
+      - name: Install PyGithub
+        run: pip install PyGithub
 
       - name: Run enum check script
-        run: |
-          node .github/scriptpy.py
+        run: python .github/scripts/check_enum_change.py
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
