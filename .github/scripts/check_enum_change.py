@@ -27,8 +27,8 @@ def update_pr_description(token, repo_name, pr_number, enum_entries):
 def main():
     diff_output = get_diff()
     print("=== GIT DIFF ===")
-print(diff_output)
-print("================")
+    print(diff_output)
+    print("================")
     enum_entries = extract_enum_entries(diff_output)
 
     if not enum_entries:
