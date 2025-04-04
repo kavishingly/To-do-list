@@ -21,6 +21,6 @@ jobs:
 
       - name: Run enum check script
         run: |
-          node .github/scripts/check-enum-change.js
+          node .github/script.js
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
